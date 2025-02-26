@@ -1,0 +1,25 @@
+name: CI
+on:
+  schedule:
+    - cron: "0 8,20 * * *"
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install dependency
+        run: pip3 install -r requirements.txt
+      - name: backups
+        run: |
+          python notion-fetch.py
+      - name: commit changes
+        run: |
+          git config --global user.email "githubaction@github.com"
+          git config --global user.name "githubaction"
+          git add .
+          git commit -m "auto backup"
+          git push
