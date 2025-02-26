@@ -14,7 +14,8 @@ Back up your Notion content using the Notion API.
 
 1. **COPY** the Repository: copy this repository, reupload it as your own account (or you cannot change it into private repository). 
 2. Set up Notion App: Apply for your own Notion app and share the page you want to back up with this app.
-3. Configure Environment Variables: Set your app token and the ID of the page you want to backup in `config.json`.
+3. Configure: Set your app token and the ID of the page you want to backup in `config.json`.
+4. Upload to Github: upload into your private repository and **cancel comment in backup.yml**
 
 ```json
 {
