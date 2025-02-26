@@ -1,7 +1,8 @@
 name: CI
 on:
-  schedule:
-    - cron: "0 8,20 * * *"
+  # UNCOMMENT THESE TWO LINE!
+  # schedule:
+  #   - cron: "0 8,20 * * *"
   push:
     branches: ["main"]
   workflow_dispatch:
