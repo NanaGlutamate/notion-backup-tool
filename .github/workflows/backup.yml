@@ -21,6 +21,10 @@ jobs:
         run: |
           git config --global user.email "githubaction@github.com"
           git config --global user.name "githubaction"
-          git add .
-          git commit -m "auto backup"
-          git push
+          if [[ -s .gitdiff ]]; then
+            git add .
+            git commit -m "auto backup"
+            git push
+          else
+            echo 'no update'
+          fi
