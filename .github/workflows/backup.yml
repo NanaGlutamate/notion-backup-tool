@@ -21,7 +21,9 @@ jobs:
         run: |
           git config --global user.email "githubaction@github.com"
           git config --global user.name "githubaction"
+          git diff > .gitdiff
           if [[ -s .gitdiff ]]; then
+            rm .gitdiff
             git add .
             git commit -m "auto backup"
             git push
